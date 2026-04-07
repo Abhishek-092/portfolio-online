@@ -217,6 +217,7 @@ section {
 
 .code-block .line {
     display: flex;
+    gap: 6px;
 }
 
 .code-block .line-num {
