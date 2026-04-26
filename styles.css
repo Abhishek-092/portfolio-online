@@ -218,7 +218,8 @@ section {
 .code-block .line {
     display: block;
     white-space: normal;
-    word-break: break-word;
+    word-break: normal;
+    overflow-wrap: break-word;
 }
 
 .code-block .line-num {
