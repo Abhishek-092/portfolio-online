@@ -466,7 +466,7 @@ section {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 80vh;
+    height: 75vh;
     background-color: var(--bg-overlay);
     backdrop-filter: blur(2px);
     z-index: 100;
