@@ -467,7 +467,6 @@ section {
     left: 0;
     width: 100vw;
     height: 68vh;
-    background-color: var(--bg-overlay);
     backdrop-filter: blur(2px);
     z-index: 100;
     display: flex;
