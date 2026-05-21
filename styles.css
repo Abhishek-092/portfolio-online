@@ -378,6 +378,51 @@ section {
 }
 
 /* 
+   EDUCATION SECTION (Tree Format)
+*/
+.edu-tree {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+}
+
+.edu-node {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.edu-folder {
+    font-weight: 600;
+    color: var(--text-heading);
+    transition: color var(--transition-fast);
+}
+
+.edu-node:hover .edu-folder {
+    color: var(--accent);
+}
+
+.edu-leaf {
+    color: var(--text-main);
+    padding-left: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.tree-pipe {
+    color: var(--text-muted);
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.edu-year {
+    color: var(--syntax-string);
+}
+
+/* 
    ACHIEVEMENTS SECTION
 */
 .achievement-list {
