@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abhishek-092.github.io/portfolio-online/sitemap.xml
