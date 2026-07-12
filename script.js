@@ -62,6 +62,20 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     }
 
+    // Toggle palette by clicking the brand header (especially useful for mobile)
+    const navBrand = document.querySelector('.nav-brand');
+    if (navBrand) {
+        navBrand.addEventListener('click', () => {
+            if (paletteBackdrop.classList.contains('hidden')) {
+                openPalette();
+            } else {
+                closePalette();
+            }
+        });
+        navBrand.style.cursor = 'pointer';
+        navBrand.title = 'Click to open command palette';
+    }
+
     function renderOptions() {
         cmdResults.innerHTML = '';
         if (filteredCommands.length === 0) {
