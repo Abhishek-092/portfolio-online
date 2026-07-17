@@ -143,6 +143,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape' && !paletteBackdrop.classList.contains('hidden')) {
             closePalette();
         }
+
+        // Arrow keys and Enter navigation when command palette is open
+        if (!paletteBackdrop.classList.contains('hidden')) {
+            if (filteredCommands.length === 0) return;
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                selectedIndex = (selectedIndex + 1) % filteredCommands.length;
+                renderOptions();
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                selectedIndex = (selectedIndex - 1 + filteredCommands.length) % filteredCommands.length;
+                renderOptions();
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                executeCommand(filteredCommands[selectedIndex]);
+            }
+        }
     });
 
     paletteBackdrop.addEventListener('click', (e) => {
@@ -153,23 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cmdInput.addEventListener('input', (e) => {
         filterOptions(e.target.value);
-    });
-
-    cmdInput.addEventListener('keydown', (e) => {
-        if (filteredCommands.length === 0) return;
-
-        if (e.key === 'ArrowDown') {
-            e.preventDefault();
-            selectedIndex = (selectedIndex + 1) % filteredCommands.length;
-            renderOptions();
-        } else if (e.key === 'ArrowUp') {
-            e.preventDefault();
-            selectedIndex = (selectedIndex - 1 + filteredCommands.length) % filteredCommands.length;
-            renderOptions();
-        } else if (e.key === 'Enter') {
-            e.preventDefault();
-            executeCommand(filteredCommands[selectedIndex]);
-        }
     });
 
     // Mobile menu toggle functionality
