@@ -548,7 +548,7 @@ section {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 68vh;
     backdrop-filter: blur(2px);
     z-index: 100;
     display: flex;
