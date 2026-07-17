@@ -53,7 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
         paletteBackdrop.classList.remove('hidden');
         cmdInput.value = '';
         filterOptions('');
-        cmdInput.focus();
+        setTimeout(() => {
+            cmdInput.focus();
+        }, 50);
         document.body.style.overflow = 'hidden'; // Prevent scrolling
     }
 
