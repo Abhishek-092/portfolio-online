@@ -688,11 +688,13 @@ section {
 
     .nav-toggle {
         display: flex;
+        order: 1;
     }
 
     .nav-brand {
         margin-bottom: 0;
         cursor: pointer;
+        order: 2;
     }
     
     .nav-links {
