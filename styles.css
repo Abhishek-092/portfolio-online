@@ -647,30 +647,43 @@ section {
         flex-direction: column;
     }
 
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: sticky;
-        top: 0;
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
-        padding: var(--spacing-sm) var(--spacing-md);
-        flex-direction: column;
-        align-items: flex-start;
-        transition: background-color var(--transition-fast);
-        z-index: 1000;
-    }
-
-    .sidebar.open {
-        background-color: var(--bg-secondary);
-        height: auto;
-    }
-    
-    .nav-header {
+    .mobile-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        position: sticky;
+        top: 0;
+        background-color: var(--bg-secondary);
+        border-bottom: 1px solid var(--border-color);
+        padding: var(--spacing-sm) var(--spacing-md);
+        z-index: 999;
+    }
+
+    .sidebar {
+        width: 260px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: -260px;
+        border-right: 1px solid var(--border-color);
+        border-bottom: none;
+        padding: var(--spacing-md);
+        padding-top: 80px;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: var(--bg-secondary);
+        transition: left var(--transition-fast) ease-in-out;
+        z-index: 1000;
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .desktop-only {
+        display: none;
     }
 
     .nav-toggle {
@@ -683,16 +696,10 @@ section {
     }
     
     .nav-links {
-        display: none;
+        display: flex;
         width: 100%;
         flex-direction: column;
         gap: var(--spacing-sm);
-        padding-top: var(--spacing-md);
-        padding-bottom: var(--spacing-sm);
-    }
-
-    .sidebar.open .nav-links {
-        display: flex;
     }
     
     .nav-links a {
