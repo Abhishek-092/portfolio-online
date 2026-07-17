@@ -123,11 +123,8 @@ kbd {
     z-index: 10;
 }
 
-.nav-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+.mobile-header {
+    display: none;
 }
 
 .nav-toggle {
